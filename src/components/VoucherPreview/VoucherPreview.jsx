@@ -1,43 +1,56 @@
+import { useEffect, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import "./VoucherPreview.css";
 
 export default function VoucherPreview({
-  side, // "front" or "back"
+  side,
   templateSrc,
   voucher,
   qrUrl,
   forwardedRef
 }) {
-  // NOTE: You can tweak these overlay positions to match your Canva layout exactly.
-  // They assume your exported template is 980x420.
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const update = () => {
+      const pad = 32; // container padding safety
+      const available = Math.min(window.innerWidth - pad, 980);
+      setScale(Math.min(1, available / 980));
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <div className="voucherWrap">
-      <div className="voucher" ref={forwardedRef}>
-        <img className="voucherImg" src={templateSrc} alt={`${side} template`} />
+      <div className="voucherScale" style={{ ["--voucherScale"]: scale }}>
+        <div className="voucher" ref={forwardedRef}>
+          <img className="voucherImg" src={templateSrc} alt={`${side} template`} />
 
-        {side === "back" && (
-          <>
-            {/* Voucher No overlay */}
-            <div className="overlay voucherNo">{voucher.code}</div>
+          {side === "back" && (
+            <>
+              <div className="overlay voucherNo">{voucher.code}</div>
+              <div className="overlay expiry">{voucher.expiryDate}</div>
 
-            {/* Expiry overlay */}
-            <div className="overlay expiry">{voucher.expiryDate}</div>
+              <div className="overlay qr">
+                <QRCodeCanvas
+                  value={qrUrl}
+                  size={120}
+                  bgColor="#ffffff"
+                  fgColor="#0ac3c7"
+                  includeMargin={true}
+                />
+              </div>
+            </>
+          )}
 
-            {/* QR code overlay (bottom-left area in your design) */}
-            <div className="overlay qr">
-              <QRCodeCanvas value={qrUrl} size={120} bgColor="#000000" fgColor="#0ac3c7" includeMargin={true} />
+          {side === "front" && voucher.amount && (
+            <div className="overlay value">
+              Value: <br /> KES {voucher.amount}
             </div>
-          </>
-        )}
-
-        {side === "front" && (
-          <>
-            {/* Optional: show value on front if you want */}
-            {voucher.amount && (
-              <div className="overlay value">Value: <br /> KES {voucher.amount}</div>
-            )}
-          </>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

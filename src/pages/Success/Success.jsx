@@ -66,7 +66,7 @@ export default function Success() {
   return (
     <div className="grid">
       {/* Receipt / Confirmation */}
-      <section className="card receipt">
+      <section className="card">
         <div className="receiptTop">
           <div>
             <h2 className="receiptTitle">Purchase complete</h2>

@@ -1,23 +1,31 @@
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-/**
- * Exports frontRef & backRef as a 2-page PDF.
- * The voucher previews should be fixed-size for clean output.
- */
 export async function exportVoucherPdf({ frontEl, backEl, fileName = "voucher.pdf" }) {
-  const pdf = new jsPDF({ orientation: "landscape", unit: "px", format: [980, 420] });
+  const W = 980;
+  const H = 420;
 
-  // Page 1
-  const c1 = await html2canvas(frontEl, { scale: 2, backgroundColor: null });
-  const img1 = c1.toDataURL("image/png");
-  pdf.addImage(img1, "PNG", 0, 0, 980, 420);
+  const pdf = new jsPDF({ orientation: "landscape", unit: "px", format: [W, H] });
 
-  // Page 2
-  pdf.addPage([980, 420], "landscape");
-  const c2 = await html2canvas(backEl, { scale: 2, backgroundColor: null });
-  const img2 = c2.toDataURL("image/png");
-  pdf.addImage(img2, "PNG", 0, 0, 980, 420);
+  const capture = async (el) => {
+    const canvas = await html2canvas(el, {
+      backgroundColor: null,
+      scale: 4,              // ⬅️ higher = sharper (3–5 is good)
+      width: W,              // ⬅️ force base size
+      height: H,
+      windowWidth: W,        // ⬅️ important on mobile
+      windowHeight: H,
+      useCORS: true
+    });
+    return canvas.toDataURL("image/png", 1.0);
+  };
+
+  const img1 = await capture(frontEl);
+  pdf.addImage(img1, "PNG", 0, 0, W, H);
+
+  pdf.addPage([W, H], "landscape");
+  const img2 = await capture(backEl);
+  pdf.addImage(img2, "PNG", 0, 0, W, H);
 
   pdf.save(fileName);
 }

@@ -267,3 +267,170 @@
   margin: 0;
   color: #0f2f33;
 }
+/* =========================================================
+   RESPONSIVE — Success receipt section (drop-in)
+   Paste at the bottom of your Success.css
+   Targets ONLY the receipt section classes you posted.
+   Breakpoints: 920px / 720px / 520px / 380px
+   ========================================================= */
+
+/* ---------- <= 920px (tablet) ---------- */
+@media (max-width: 920px){
+
+  /* top row becomes stacked */
+  .receiptTop{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .receiptStatus{
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
+  }
+
+  .receiptTitle{
+    font-size: 26px;
+  }
+
+  .receiptSubtitle{
+    max-width: 100%;
+  }
+
+  /* keep details comfortable */
+  .receiptGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* actions: allow wrapping */
+  .receiptActions{
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- <= 720px (large phones / small tablets) ---------- */
+@media (max-width: 720px){
+
+  .receiptTitle{
+    font-size: 22px;
+  }
+
+  .receiptSubtitle{
+    font-size: 13px;
+  }
+
+  /* details go single column */
+  .receiptGrid{
+    grid-template-columns: 1fr;
+  }
+
+  /* link row stacks fully */
+  .linkRow{
+    grid-template-columns: 1fr !important;
+  }
+
+  .linkBox{
+    white-space: nowrap; /* keep your ellipsis */
+    max-width: 100%;
+  }
+
+  /* bundle rows stack */
+  .bundleMiniRow{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .bmRight{
+    min-width: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  /* actions become 2-column grid if you have 2-3 buttons */
+  .receiptActions{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+/* ---------- <= 520px (phones) ---------- */
+@media (max-width: 520px){
+
+  /* soften glows so they don't dominate */
+  .receipt::before{
+    width: 320px;
+    height: 320px;
+    inset: -120px -160px auto auto;
+  }
+
+  .receipt::after{
+    width: 380px;
+    height: 380px;
+    inset: auto auto -160px -160px;
+  }
+
+  .receiptTop{
+    padding-bottom: 12px;
+  }
+
+  .receiptTitle{
+    font-size: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  .statusPill{
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* tighten cards a bit */
+  .receiptCard{
+    padding: 11px;
+    border-radius: 14px;
+  }
+
+  .receiptLabel{
+    font-size: 10px;
+  }
+
+  .receiptValue{
+    font-size: 14px;
+  }
+
+  /* buttons full width */
+  .receiptActions{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- <= 380px (small phones) ---------- */
+@media (max-width: 380px){
+
+  .receiptTitle{
+    font-size: 18px;
+  }
+
+  .receiptSubtitle{
+    font-size: 12px;
+  }
+
+  .linkBox{
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .bundleTitle{
+    font-size: 15px;
+  }
+
+  .bundleMiniRow{
+    padding: 9px;
+  }
+
+  .bmTitle{
+    font-size: 14px;
+  }
+}

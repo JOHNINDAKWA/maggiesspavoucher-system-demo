@@ -1,31 +1,60 @@
+/* =========================================================
+   VoucherPreview.css — FINAL (scrollable, no weird gaps)
+   - Voucher stays FIXED at 980x420 (overlay positions stay perfect)
+   - Preview becomes horizontally scrollable on small screens
+   - No transform scaling (prevents big blank space under preview)
+   ========================================================= */
+
+/* Wrapper: this is the scroll container */
 .voucherWrap{
-  display:flex;
-  justify-content:center;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;                  /* ✅ horizontal scroll */
+  overflow-y: hidden;                /* ✅ prevents vertical scrollbars */
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 10px;                /* space around the voucher */
+  display: block;
 }
 
+/* Optional: nicer scrollbar behavior + snap (remove snap if you hate it) */
+.voucherWrap{
+  scroll-snap-type: x mandatory;
+  scrollbar-gutter: stable both-edges;
+}
+
+/* This element just helps sizing/centering */
+.voucherScale{
+  display: inline-block;
+  scroll-snap-align: start;
+  transform: none !important;        /* ✅ kill scaling completely */
+}
+
+/* The voucher stays fixed for layout + export accuracy */
 .voucher{
   width: 980px;
   height: 420px;
   position: relative;
   border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-  background: #ffffff;
+  overflow: hidden;                  /* ✅ keep overlays clipped to voucher */
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+  background: transparent;
 }
 
+/* Template image */
 .voucherImg{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display:block;
+  display: block;
 }
 
+/* Overlays */
 .overlay{
-  position:absolute;
+  position: absolute;
   font-family: ui-sans-serif, system-ui;
-  font-weight: 800;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 /* Adjust these to match your template lines exactly */
@@ -34,7 +63,7 @@
   top: 83px;
   font-size: 16px;
   letter-spacing: 1px;
-  color: #0f2f33;
+  color: #000;
 }
 
 .expiry{
@@ -42,22 +71,60 @@
   top: 120px;
   font-size: 16px;
   letter-spacing: 1px;
-  color: #fff;
+  color: #000; /* keep readable on your back template */
 }
 
 .qr{
   left: 175px;
   bottom: 50px;
-  background: rgba(255,255,255,0.75);
+  background: rgba(0,0,0,0.35);
   padding: 10px;
   border-radius: 14px;
   border: 1px solid rgba(10,195,199,0.35);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
 }
 
 .value{
   right: 40px;
-  bottom: 130px;
+  bottom: 140px;
   font-size: 16px;
   color: #0ac3c7;
+}
+
+/* =========================================================
+   RESPONSIVE (does NOT resize voucher)
+   Just improves feel and reduces heavy styling on phones
+   ========================================================= */
+
+/* <= 720px: align scroll start to left so users know it scrolls */
+@media (max-width: 720px){
+  .voucherWrap{
+    padding: 8px 8px;
+  }
+  .voucher{
+    box-shadow: 0 12px 34px rgba(0,0,0,0.45);
+  }
+}
+
+/* <= 520px: slightly tighter QR padding */
+@media (max-width: 520px){
+  .voucherWrap{
+    padding: 8px 10px;
+  }
+  .qr{
+    padding: 8px;
+    border-radius: 12px;
+  }
+}
+
+/* <= 380px: slightly smaller overlay text (preview only) */
+@media (max-width: 380px){
+  .voucherNo,
+  .expiry,
+  .value{
+    font-size: 14px;
+  }
+  .qr{
+    padding: 7px;
+    border-radius: 12px;
+  }
 }
