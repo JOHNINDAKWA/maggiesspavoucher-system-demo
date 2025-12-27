@@ -11,7 +11,7 @@ export default function Home() {
         </p>
         <div className="heroActions">
           <Link className="btn primary" to="/buy">Buy a Voucher</Link>
-          <Link className="btn" to="/v/DEMO">Scan Demo</Link>
+          {/* <Link className="btn" to="/v/DEMO">Scan Demo</Link> */}
         </div>
         <div className="pillRow">
           <span className="pill">Relaxation</span>

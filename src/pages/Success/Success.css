@@ -251,6 +251,8 @@
   z-index: 1;
   padding-top: 14px;
   border-top: 1px solid rgba(0,0,0,0.06);
+  gap: 10px;
+  display: flex;
 }
 
 /* Preview section header spacing (nice touch) */
