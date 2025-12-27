@@ -108,7 +108,7 @@ export default function Buy() {
   }
 
   return (
-    <div className="grid two">
+    <div className="grid2 two">
       <section className="card">
         <h2>Buy a Voucher</h2>
         <p className="small">

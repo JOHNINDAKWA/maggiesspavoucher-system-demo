@@ -136,13 +136,13 @@ a:hover{
 }
 
 /* Grid */
-/* .grid{
+.grid2{
   display:grid;
   gap: 16px;
-} */
+}
 
 @media(min-width: 920px){
-  .grid.two{
+  .grid2.two{
     grid-template-columns: 3fr 1fr;
   }
 }
@@ -224,7 +224,7 @@ hr.sep{
   }
 
   /* any two-column grids should collapse */
-  .grid.two{
+  .grid2.two{
     grid-template-columns: 1fr !important;
   }
 

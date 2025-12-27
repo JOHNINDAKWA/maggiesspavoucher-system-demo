@@ -14,3 +14,8 @@
     display:flex;
     gap: 10px;
 }
+
+.grid2{
+  display:grid;
+  gap: 16px;
+}

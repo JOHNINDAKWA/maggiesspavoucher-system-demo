@@ -3,7 +3,7 @@ import "./Home.css";
 
 export default function Home() {
   return (
-    <div className="grid two">
+    <div className="grid2 two">
       <section className="card hero">
         <h1>Spa Gift Vouchers</h1>
         <p className="small">
