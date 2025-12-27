@@ -1,0 +1,326 @@
+/* ===== Voucher Details (Light Theme, Premium) ===== */
+
+.vdCard{
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft teal glow accents */
+.vdCard::before{
+  content: "";
+  position: absolute;
+  inset: -140px -160px auto auto;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle at 30% 30%, rgba(10,195,199,0.22), transparent 62%);
+  pointer-events: none;
+}
+
+.vdCard::after{
+  content: "";
+  position: absolute;
+  inset: auto auto -160px -160px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle at 60% 60%, rgba(10,195,199,0.14), transparent 62%);
+  pointer-events: none;
+}
+
+.mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Header */
+.vdHeader{
+  display:flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 1;
+}
+
+.vdTitle{
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.3px;
+  color: #0f2f33;
+}
+
+.vdSubtitle{
+  margin: 6px 0 0;
+  max-width: 560px;
+}
+
+.vdHeaderRight{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+  min-width: 220px;
+}
+
+.vdCode{
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+  color: rgba(15,47,51,0.88);
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status pill */
+.vdStatus{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.85);
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+  color: #0f2f33;
+}
+
+.vdDot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(120,120,120,0.85);
+  box-shadow: 0 0 0 4px rgba(120,120,120,0.14);
+}
+
+.vdStatus.pending{
+  border-color: rgba(255,200,0,0.35);
+}
+.vdStatus.pending .vdDot{
+  background: rgba(255,200,0,0.95);
+  box-shadow: 0 0 0 4px rgba(255,200,0,0.16);
+}
+
+.vdStatus.active{
+  border-color: rgba(10,195,199,0.35);
+}
+.vdStatus.active .vdDot{
+  background: rgba(10,195,199,1);
+  box-shadow: 0 0 0 4px rgba(10,195,199,0.16);
+}
+
+.vdStatus.expired{
+  border-color: rgba(255,70,70,0.30);
+}
+.vdStatus.expired .vdDot{
+  background: rgba(255,70,70,0.95);
+  box-shadow: 0 0 0 4px rgba(255,70,70,0.14);
+}
+
+.vdStatus.redeemed{
+  border-color: rgba(120,120,120,0.22);
+}
+.vdStatus.redeemed .vdDot{
+  background: rgba(120,120,120,0.85);
+  box-shadow: 0 0 0 4px rgba(120,120,120,0.12);
+}
+
+/* Summary grid */
+.vdGrid{
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  position: relative;
+  z-index: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 920px){
+  .vdGrid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.vdInfoCard{
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.86);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+  backdrop-filter: blur(6px);
+}
+
+.vdWide{
+  grid-column: 1 / -1;
+}
+
+.vdLabel{
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(15,47,51,0.60);
+}
+
+.vdValue{
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 900;
+  color: #0f2f33;
+  line-height: 1.2;
+}
+
+.vdValue.teal{
+  color: #0ac3c7;
+}
+
+/* Share row */
+.vdShare{
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 720px){
+  .vdShare{
+    grid-template-columns: 1fr auto auto;
+  }
+}
+
+.vdLink{
+  border: 1px solid rgba(10,195,199,0.22);
+  background: rgba(10,195,199,0.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+  color: rgba(15,47,51,0.85);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Section */
+.vdSection{
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.vdSectionHeader{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.vdH3{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 1000;
+  color: #0f2f33;
+}
+
+/* Table-like list */
+.vdTable{
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.86);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.06);
+}
+
+.vdRow{
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 0.5fr 0.9fr 0.9fr;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  align-items: center;
+}
+
+.vdRow:first-child{
+  border-top: none;
+}
+
+.vdHead{
+  background: rgba(10,195,199,0.08);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(15,47,51,0.65);
+}
+
+.vdSvcTitle{
+  font-weight: 900;
+  color: #0f2f33;
+}
+
+.right{
+  text-align: right;
+}
+
+/* Actions */
+.vdActions{
+  margin-top: 16px;
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 1;
+}
+
+.vdNote{
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Right-side panel */
+.vdSide{
+  position: sticky;
+  top: 90px;
+  height: fit-content;
+}
+
+.vdSideTitle{
+  margin: 0 0 8px;
+  color: #0f2f33;
+}
+
+.vdTips{
+  display:grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.vdTip{
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(10,195,199,0.06);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.vdTipTitle{
+  font-weight: 1000;
+  color: #0f2f33;
+  margin-bottom: 4px;
+}
+
+.vdQuickLinks{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,12 @@
+.adminList{ margin-top: 12px; display:grid; gap: 10px; }
+.row{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.18);
+}
+.code{ font-weight: 900; letter-spacing: 0.6px; }
+.empty{ padding: 14px; color: rgba(255,255,255,0.70); }

@@ -1,0 +1,261 @@
+{
+  "branches": [
+    {
+      "id": "nairobi",
+      "name": "Nairobi Branch",
+      "serviceCategories": [
+        {
+          "heading": "Prenatal",
+          "subgroups": [
+            {
+              "title": "Prenatal Treatments",
+              "services": [
+                {
+                  "description": "90 mins (2 treatments)",
+                  "value": 90,
+                  "price": "KES 11,300"
+                },
+                {
+                  "description": "1 hr 45 mins (4 treatments)",
+                  "value": 105,
+                  "price": "KES 12,250"
+                },
+                {
+                  "description": "2 hr (4 treatments)",
+                  "value": 120,
+                  "price": "KES 14,000"
+                }
+              ]
+            },
+            {
+              "title": "Massages",
+              "services": [
+                {
+                  "description": "60 mins",
+                  "value": 60,
+                  "price": "KES 6,000"
+                },
+                {
+                  "description": "90 mins",
+                  "value": 90,
+                  "price": "KES 9,000"
+                }
+              ]
+            },
+            {
+              "title": "Bump Luxe Facial",
+              "services": [
+                {
+                  "description": "75 mins (3 treatments)",
+                  "value": 75,
+                  "price": "KES 8,535"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Postpartum",
+          "subgroups": [
+            {
+              "title": "Postpartum Healing",
+              "services": [
+                {
+                  "description": "Postpartum Healing Therapy (4 treatments) – 2 hrs",
+                  "value": 120,
+                  "price": "KES 14,250"
+                },
+                {
+                  "description": "Post Birth Balance Session (3 treatments) – 2 hrs",
+                  "value": 120,
+                  "price": "KES 11,320"
+                },
+                {
+                  "description": "Golden Recovery Therapy (4 holistic treatments) – 3 hrs 30 mins",
+                  "value": 210,
+                  "price": "KES 31,800"
+                }
+              ]
+            },
+            {
+              "title": "Massages",
+              "services": [
+                {
+                  "description": "75 mins",
+                  "value": 75,
+                  "price": "KES 6,500"
+                },
+                {
+                  "description": "90 mins",
+                  "value": 90,
+                  "price": "KES 9,000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Fertility",
+          "subgroups": [
+            {
+              "title": "Therapies & Rituals",
+              "services": [
+                {
+                  "description": "Pure Skin Therapy – 3 treatments (1 hr)",
+                  "value": 60,
+                  "price": "KES 5,700"
+                },
+                {
+                  "description": "Foot Wellness Ritual – 2 treatments (1 hr 30 mins)",
+                  "value": 90,
+                  "price": "KES 8,535"
+                },
+                {
+                  "description": "Bare and Beautiful – 4 treatments (1 hr 15 mins)",
+                  "value": 75,
+                  "price": "KES 5,300"
+                },
+                {
+                  "description": "New Me Renewal – 2 treatments (1 hr)",
+                  "value": 60,
+                  "price": "KES 5,700"
+                },
+                {
+                  "description": "Breast Divine Release – 2 treatments (1 hr 15 mins)",
+                  "value": 75,
+                  "price": "KES 7,000"
+                }
+              ]
+            },
+            {
+              "title": "Massages",
+              "services": [
+                {
+                  "description": "60 mins",
+                  "value": 60,
+                  "price": "KES 6,000"
+                },
+                {
+                  "description": "90 mins",
+                  "value": 90,
+                  "price": "KES 8,000"
+                },
+                {
+                  "description": "60 mins – Home Service",
+                  "value": 60,
+                  "price": "KES 8,500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Self Care",
+          "subgroups": [
+            {
+              "title": "Lymphatic Care",
+              "services": [
+                {
+                  "description": "Lymphatic Facial – 1 treatment (1 hr)",
+                  "value": 60,
+                  "price": "KES 4,500"
+                },
+                {
+                  "description": "Lymphatic Full Body – 1 treatment (1 hr 15 mins)",
+                  "value": 75,
+                  "price": "KES 7,000"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nanyuki",
+      "name": "Nanyuki Branch",
+      "serviceCategories": [
+        {
+          "heading": "Signature Massage Rituals",
+          "subgroups": [
+            {
+              "title": "Massages",
+              "services": [
+                {
+                  "description": "Safari Muscle Revival (Deep Tissue) – 90 mins",
+                  "value": 90,
+                  "price": "KES 8,000"
+                },
+                {
+                  "description": "Mount Kenya Melt (Deep Tissue) – 60 mins",
+                  "value": 60,
+                  "price": "KES 6,500"
+                },
+                {
+                  "description": "Nanyuki Cloud Massage (Swedish) – 60 mins",
+                  "value": 60,
+                  "price": "KES 5,500"
+                },
+                {
+                  "description": "Sacred Bump Ritual (Prenatal) – 75 mins",
+                  "value": 75,
+                  "price": "KES 7,500"
+                },
+                {
+                  "description": "Mama Rebirth Touch (Postpartum) – 75 mins",
+                  "value": 75,
+                  "price": "KES 7,500"
+                },
+                {
+                  "description": "Roots & Reflex Harmony (Reflexology) – 45 mins",
+                  "value": 45,
+                  "price": "KES 4,500"
+                },
+                {
+                  "description": "Glow & Flow Facial Detox (Lymphatic Facial) – 60 mins",
+                  "value": 60,
+                  "price": "KES 5,000"
+                },
+                {
+                  "description": "Serenity Crown Massage (Head, Neck & Shoulder) – 30 mins",
+                  "value": 30,
+                  "price": "KES 4,000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "Enhancements & Extras",
+          "subgroups": [
+            {
+              "title": "Add-ons",
+              "services": [
+                {
+                  "description": "Garden Foot Revival (herbal soak + scrub)",
+                  "value": 0,
+                  "price": "KES 1,200"
+                },
+                {
+                  "description": "Sacred Womb Polish (belly scrub + mask)",
+                  "value": 0,
+                  "price": "KES 1,500"
+                },
+                {
+                  "description": "Scented Soul Elevation (aromatherapy oils)",
+                  "value": 0,
+                  "price": "KES 900"
+                },
+                {
+                  "description": "Herbal Steam Therapy (facial or foot steam)",
+                  "value": 0,
+                  "price": "KES 1,000"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
